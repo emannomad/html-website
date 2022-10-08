@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  text-align: center;
+  font-family: 'Bahnschrift Light',Arial, Helvetica, sans-serif;
+}
+.special {
+  font-size: 1.4rem;
+}
+
+.special:hover {
+  color: gold;
+  transition: 0.3s;
+}
+
+img {
+  pointer-events: none;
+  user-select: none;
+}
+
+ul {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+q {
+  font-style: italic;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.55em;
+}
+
+header {
+  background: linear-gradient(#8d8d8d, #e6e6e6);
+  border-bottom: 1px solid black;
+  position: sticky;
+  top: -210px
+}
+
+header img {
+  margin-top: 30px;
+  width: 360px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+pre {
+  white-space: pre-wrap;     
+  white-space: -moz-pre-wrap; 
+  white-space: -pre-wrap;     
+  white-space: -o-pre-wrap;    
+  word-wrap: break-word;       
+ }
+
+.header-nav a {
+  color: black;
+  padding: 15px 25px;
+  text-decoration: none;
+}
+
+.header-nav a:hover {
+  /* background: linear-gradient( #d2d2d2, white); */
+  animation-name: navchange;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    border-bottom: solid black 2px;
+    padding: 14px 25px;
+    font-weight: bold;
+}
+
+.header-nav p {
+  flex: 1;
+  text-align: right;
+  margin-right: 20px;
+}
+
+.header-nav .active {
+  background-image: linear-gradient( #d5d5d5, white);
+}
+
+.product-list {
+  display: none;
+  width: 11em;
+  background-color: #d2d2d2;
+  text-align: left;
+  position: absolute;
+  left: 5.74em;
+  transform: translateY(0.9em);
+}
+.prod:hover .product-list {
+  display: block;
+}
+
+.product-list li {
+  display: block;
+  padding: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.product-list li:hover {
+  animation-name: navchange;
+  animation-duration: 0.15s;
+  animation-fill-mode: forwards;
+  font-weight: bold;
+}
+
+#productMenu a {
+    display: block;
+    width: 100%; 
+    padding: 10px 10px;
+}
+
+.product-list a:hover {
+  background-image: none;
+  background-color: transparent;
+  width: 100%;
+  padding: 1px 10px;
+  border: none;
+  animation: none;
+}
+
+footer {
+  background: linear-gradient(rgb(26, 26, 26), rgb(48, 48, 48));
+  color: white;
+}
+
+footer .copyright {
+  padding: 40px;
+  background-color: rgb(26, 26, 26);
+}
+
+footer hr {
+  border: 1px solid black;
+}
+
+footer a {
+  display: inline-block;
+  color: white;
+}
+
+footer a:hover {
+  transition: 0.3s;
+  color: gold;
+}
+
+footer .b2top {
+  padding: 10px;
+  color: rgb(187, 187, 187);
+}
+
+.footer-nav {
+  padding: 20px 0 15px 0;
+}
+
+.footer-nav h2 {
+  /* color: rgb(187, 187, 187); */
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+@keyframes navchange{
+  0% {color: rgb(0, 0, 0);
+      background-image: linear-gradient(transparent);
+  }
+  25% { 
+      /* background-image: linear-gradient( #d2d2d2, white); */
+  }
+  37% { 
+      background-image: linear-gradient(#d5d5d5,rgba(255, 255, 255, 0.336));
+  }
+  50% { 
+      background-image: linear-gradient(#d5d5d5,rgba(255, 255, 255, 0.486));
+  }
+  62% { 
+      background-image: linear-gradient(#d5d5d5,rgba(255, 255, 255, 0.685));
+  }
+  75% { 
+      background-image: linear-gradient(#d5d5d5,rgba(255, 255, 255, 0.822));
+  }
+  100% { 
+    background-image: linear-gradient( #d5d5d5, white);
+  }
+}
+
+
+@media screen and (max-width: 930px) {
+  header {
+    position: static;
+  }
+
+  header img {
+    margin: 25px 0 15px;
+    width: 200px;
+  }
+  
+  .header-nav {
+    flex-direction: column;
+  }
+  .header-nav p {
+    display: none;
+  }
+  .header-nav a {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+  }
+  .header-nav .prod {
+    width: 100%;
+  }
+  .product-list {
+    text-align: center;
+    position: relative;
+    display: none;
+    width: 100%;
+    left: 0;
+    transform: translateY(0);
+    background-color: transparent;
+  }
+
+  .header-nav .active {
+    background: none;
+    background-color: rgb(170, 170, 170);
+  }
+
+  .header-nav a:hover {
+    padding: 12px 0;
+    border: none;
+  }
+
+  .prod:hover .product-list{
+    display: none;
+  }
+}
